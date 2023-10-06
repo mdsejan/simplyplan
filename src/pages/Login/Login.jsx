@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -8,7 +9,7 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
   return (
-    <div className="min-h-screen px-5 flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen px-5 flex items-center justify-center ">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-semibold text-center mb-4">Login</h2>
         <form>
@@ -59,12 +60,20 @@ const Login = () => {
           <div className="mb-4">
             <button
               type="submit"
-              className="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
             >
               Login
             </button>
           </div>
         </form>
+        <div>
+          <p className="mt-8 text-md">
+            New to this website? Please &nbsp;
+            <Link to="/register" className="text-red-950 font-bold">
+              Register
+            </Link>
+          </p>
+        </div>
         <div className="text-center">
           <div className="divider my-10">OR</div>
           <button className="btn btn-outline w-full mb-4 capitalize text-blue-600">

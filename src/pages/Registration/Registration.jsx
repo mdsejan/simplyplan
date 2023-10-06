@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -8,7 +9,7 @@ const Registration = () => {
     setShowPassword(!showPassword);
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center py-20">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-semibold text-center mb-4">Register</h2>
         <form>
@@ -80,6 +81,14 @@ const Registration = () => {
             </button>
           </div>
         </form>
+        <div>
+          <p className="mt-8 text-md">
+            Alredy have an Account?
+            <Link to="/login" className="text-red-950 font-bold ml-2">
+              Login
+            </Link>
+          </p>
+        </div>
         <div className="text-center">
           <div className="divider my-10">OR</div>
           <button className="btn btn-outline w-full mb-4 capitalize text-blue-600">
