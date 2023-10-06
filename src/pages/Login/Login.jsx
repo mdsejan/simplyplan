@@ -1,9 +1,38 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ThemeContext } from "../../provider/AuthProvider";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const { googleSignIn, signInUser } = useContext(ThemeContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleSignIn()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
@@ -12,7 +41,7 @@ const Login = () => {
     <div className="min-h-screen px-5 flex items-center justify-center ">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-semibold text-center mb-4">Login</h2>
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -76,7 +105,10 @@ const Login = () => {
         </div>
         <div className="text-center">
           <div className="divider my-10">OR</div>
-          <button className="btn btn-outline w-full mb-4 capitalize text-blue-600">
+          <button
+            onClick={handleGoogleLogin}
+            className="btn btn-outline w-full mb-4 capitalize text-blue-600"
+          >
             <FaGoogle></FaGoogle>
             <span>Login With Google</span>
           </button>

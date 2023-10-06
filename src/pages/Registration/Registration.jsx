@@ -1,18 +1,43 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../../provider/AuthProvider";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
 
+  const { googleSignIn, createUser } = useContext(ThemeContext);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const fullName = e.target.fullName.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    createUser(email, password).then((result) => {
+      console.log(result.user, fullName);
+    });
+  };
+
+  const handleGoogleLogin = () => {
+    googleSignIn()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+
   return (
-    <div className="min-h-screen flex items-center justify-center py-20">
+    <div className="min-h-screen flex items-center justify-center md:py-20 px-5">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-semibold text-center mb-4">Register</h2>
-        <form>
+        <form onSubmit={handleRegister}>
           <div className="mb-4">
             <label
               htmlFor="fullName"
@@ -91,7 +116,10 @@ const Registration = () => {
         </div>
         <div className="text-center">
           <div className="divider my-10">OR</div>
-          <button className="btn btn-outline w-full mb-4 capitalize text-blue-600">
+          <button
+            onClick={handleGoogleLogin}
+            className="btn btn-outline w-full mb-4 capitalize text-blue-600"
+          >
             <FaGoogle></FaGoogle>
             <span>Continue With Google</span>
           </button>
