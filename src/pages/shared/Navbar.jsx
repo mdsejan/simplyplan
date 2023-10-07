@@ -1,6 +1,16 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { ThemeContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(ThemeContext);
+
+  const handleLogOut = () => {
+    logOut().then(() => {
+      console.log("Sign-out successful");
+    });
+  };
+
   const navLinks = (
     <>
       <li>
@@ -9,9 +19,13 @@ const Navbar = () => {
         </NavLink>
       </li>
 
-      <li>
-        <NavLink to="/register">Register</NavLink>
-      </li>
+      {!user ? (
+        <li>
+          <NavLink to="/register">Register</NavLink>
+        </li>
+      ) : (
+        " "
+      )}
     </>
   );
   return (
@@ -50,12 +64,37 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <Link
-            to="/login"
-            className=" py-2 px-8 bg-gray-200 hover:bg-black hover:text-white rounded font-semibold capitalize"
-          >
-            Login
-          </Link>
+          {user ? (
+            <div className="flex items-center">
+              <div>
+                <h3 className="mr-2 font-medium"> {user.displayName} </h3>
+              </div>
+              <div className="avatar mr-3">
+                <div className="w-10 rounded-full">
+                  <img
+                    src={
+                      user.photoURL
+                        ? user.photoURL
+                        : "https://i.ibb.co/Sw3GfGJ/user.png"
+                    }
+                  />
+                </div>
+              </div>
+              <button
+                onClick={handleLogOut}
+                className=" py-2 px-8 bg-gray-200 hover:bg-black hover:text-white rounded font-semibold capitalize"
+              >
+                LogOut
+              </button>
+            </div>
+          ) : (
+            <Link
+              to="/login"
+              className=" py-2 px-8 bg-gray-200 hover:bg-black hover:text-white rounded font-semibold capitalize"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

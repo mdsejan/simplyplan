@@ -2,11 +2,15 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../provider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [registerError, setRegisterError] = useState("");
 
-  const { googleSignIn, createUser } = useContext(ThemeContext);
+  const { googleSignIn, createUser, loading, setLoading } =
+    useContext(ThemeContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -14,9 +18,57 @@ const Registration = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    createUser(email, password).then((result) => {
-      console.log(result.user, fullName);
-    });
+    // reset error
+    setRegisterError("");
+
+    if (password.length < 6) {
+      setRegisterError("Password must be at least 6 characters long.");
+      return;
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      setRegisterError("Password must contain at least one capital letter.");
+      return;
+    }
+
+    if (!/[!@#$%^&*]/.test(password)) {
+      setRegisterError(
+        "Password must contain at least one special character (e.g., !@#$%^&*)."
+      );
+      return;
+    }
+
+    createUser(email, password)
+      .then(() => {
+        setLoading(false);
+        toast.success("Success! Your registration is complete", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+
+        e.target.reset();
+
+        console.log(fullName);
+      })
+      .catch((error) => {
+        setLoading(false);
+        toast.error(error.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      });
   };
 
   const handleGoogleLogin = () => {
@@ -100,30 +152,47 @@ const Registration = () => {
           <div className="mb-4">
             <button
               type="submit"
-              className="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-300"
+              className=" flex items-center justify-center w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none"
             >
               Register
+              {loading ? (
+                <span className="loading loading-spinner loading-sm ml-3"></span>
+              ) : (
+                ""
+              )}
             </button>
           </div>
         </form>
-        <div>
-          <p className="mt-8 text-md">
-            Alredy have an Account?
-            <Link to="/login" className="text-blue-600 font-bold ml-2">
-              Login
-            </Link>
+        {registerError && (
+          <p className="text-red-700 font-bold mt-5 bg-slate-100 p-2 text-center rounded">
+            {registerError}
           </p>
-        </div>
-        <div className="text-center">
-          <div className="divider my-10">OR</div>
-          <button
-            onClick={handleGoogleLogin}
-            className="btn btn-outline w-full mb-4 capitalize font-bold text-blue-600"
-          >
-            <FaGoogle></FaGoogle>
-            <span>Continue With Google</span>
-          </button>
-        </div>
+        )}
+        {!registerError && (
+          <>
+            <div>
+              <p className="mt-8 text-md">
+                Alredy have an Account?
+                <Link to="/login" className="text-blue-600 font-bold ml-2">
+                  Login
+                </Link>
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="divider my-10">OR</div>
+              <button
+                onClick={handleGoogleLogin}
+                className="btn btn-outline w-full mb-4 capitalize font-bold text-blue-600"
+              >
+                <FaGoogle></FaGoogle>
+                <span>Continue With Google</span>
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+      <div>
+        <ToastContainer />
       </div>
     </div>
   );
