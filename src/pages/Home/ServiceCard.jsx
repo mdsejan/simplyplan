@@ -1,8 +1,9 @@
 import { FaAnglesRight } from "react-icons/fa6";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
-  const { image, name, shortDescription, price } = service || {};
+  const { id, image, name, shortDescription, price } = service || {};
   return (
     <div className="bg-white rounded-lg shadow-md">
       <figure className="p-3">
@@ -15,12 +16,14 @@ const ServiceCard = ({ service }) => {
         <p className="text-gray-500 text-xl mt-5">
           <span className="font-semibold  text-black">Price:</span> {price}
         </p>
-        <button className=" text-blue-600 border  hover:bg-black hover:text-white font-bold px-4 py-1 mt-8 rounded-full">
-          <span className="flex items-center">
-            See Details
-            <FaAnglesRight className="ml-3"></FaAnglesRight>
-          </span>
-        </button>
+        <Link to={`/service/${id}`}>
+          <button className=" text-blue-600 border  hover:bg-black hover:text-white font-bold px-4 py-1 mt-8 rounded-full">
+            <span className="flex items-center">
+              See Details
+              <FaAnglesRight className="ml-3"></FaAnglesRight>
+            </span>
+          </button>
+        </Link>
       </div>
     </div>
   );
