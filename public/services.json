@@ -1,10 +1,11 @@
 [
   {
+    "id": "1",
     "name": "Wedding Planning",
     "image": "https://i.ibb.co/34FbD71/Wedding-Planning.jpg",
     "price": "$2,500 - $5,000",
-    "short-description": "Elegant wedding planning service to make your special day unforgettable.",
-    "full-description": "Our wedding planning service is designed to make your special day truly unforgettable. We offer a range of packages to suit your needs, from basic to premium. Our dedicated team of professionals will work closely with you to ensure every detail is perfect. From venue selection and decor to catering and entertainment, we handle it all to create a seamless and magical wedding experience. Let us take the stress out of wedding planning so you can focus on cherishing each moment with your loved ones. Contact us today to start planning your dream wedding.",
+    "shortDescription": "Elegant wedding planning service to make your special day unforgettable.",
+    "fullDescription": "Our wedding planning service is designed to make your special day truly unforgettable. We offer a range of packages to suit your needs, from basic to premium. Our dedicated team of professionals will work closely with you to ensure every detail is perfect. From venue selection and decor to catering and entertainment, we handle it all to create a seamless and magical wedding experience. Let us take the stress out of wedding planning so you can focus on cherishing each moment with your loved ones. Contact us today to start planning your dream wedding.",
     "pricing": {
       "basic": "$2,500",
       "standard": "$3,500",
@@ -13,11 +14,12 @@
     "address": "123 Main Street, Anytown, USA"
   },
   {
+    "id": "2",
     "name": "Birthday Party Coordination",
     "image": "https://i.ibb.co/QvjzXfC/Birthday-Party.jpg",
     "price": "$500 - $1,000",
-    "short-description": "Fun and creative birthday party planning tailored to your preferences.",
-    "full-description": "Celebrate your special day with a birthday party that reflects your unique style and preferences. Our birthday party coordination service is all about creating fun and creative celebrations that you and your guests will cherish. We offer three packages to choose from, each designed to make your birthday unforgettable. Whether it's a themed party, a surprise celebration, or a casual gathering, we've got you covered. Contact us now to plan the perfect birthday party that suits your budget and preferences.",
+    "shortDescription": "Fun and creative birthday party planning tailored to your preferences.",
+    "fullDescription": "Celebrate your special day with a birthday party that reflects your unique style and preferences. Our birthday party coordination service is all about creating fun and creative celebrations that you and your guests will cherish. We offer three packages to choose from, each designed to make your birthday unforgettable. Whether it's a themed party, a surprise celebration, or a casual gathering, we've got you covered. Contact us now to plan the perfect birthday party that suits your budget and preferences.",
     "pricing": {
       "basic": "$500",
       "standard": "$750",
@@ -26,11 +28,12 @@
     "address": "456 Elm Avenue, Cityville, USA"
   },
   {
+    "id": "3",
     "name": "Anniversary Celebration",
     "image": "https://i.ibb.co/b2SsHPp/Anniversary-Celebration.jpg",
     "price": "$1,200 - $2,500",
-    "short-description": "Romantic anniversary celebration planning for couples in love.",
-    "full-description": "Celebrate your love story with a romantic anniversary celebration that will create beautiful memories. Our anniversary celebration planning service is dedicated to helping couples express their love and appreciation for each other in a special way. We offer three packages to cater to your needs and preferences. From intimate dinners to grand soirées, we can design an anniversary celebration that reflects your unique journey together. Contact us today to plan a memorable anniversary celebration that you and your partner will cherish forever.",
+    "shortDescription": "Romantic anniversary celebration planning for couples in love.",
+    "fullDescription": "Celebrate your love story with a romantic anniversary celebration that will create beautiful memories. Our anniversary celebration planning service is dedicated to helping couples express their love and appreciation for each other in a special way. We offer three packages to cater to your needs and preferences. From intimate dinners to grand soirées, we can design an anniversary celebration that reflects your unique journey together. Contact us today to plan a memorable anniversary celebration that you and your partner will cherish forever.",
     "pricing": {
       "basic": "$1,200",
       "standard": "$1,800",
@@ -39,11 +42,12 @@
     "address": "789 Oak Lane, Suburbia, USA"
   },
   {
+    "id": "4",
     "name": "Engagement Party Services",
     "image": "https://i.ibb.co/56yNH49/Engagement-Party.jpg",
     "price": "$800 - $1,500",
-    "short-description": "Engagement party coordination to mark the beginning of a beautiful journey.",
-    "full-description": "Mark the start of your beautiful journey together with an engagement party that sets the perfect tone. Our engagement party services are designed to make this special occasion even more memorable. Choose from our three packages to create an engagement party that suits your style and preferences. Whether it's an intimate gathering or a lively celebration, we'll make sure it's filled with love and joy. Contact us today to plan an engagement party that captures the essence of your love story.",
+    "shortDescription": "Engagement party coordination to mark the beginning of a beautiful journey.",
+    "fullDescription": "Mark the start of your beautiful journey together with an engagement party that sets the perfect tone. Our engagement party services are designed to make this special occasion even more memorable. Choose from our three packages to create an engagement party that suits your style and preferences. Whether it's an intimate gathering or a lively celebration, we'll make sure it's filled with love and joy. Contact us today to plan an engagement party that captures the essence of your love story.",
     "pricing": {
       "basic": "$800",
       "standard": "$1,100",
@@ -52,11 +56,12 @@
     "address": "101 Pine Street, Townsville, USA"
   },
   {
+    "id": "5",
     "name": "Retirement Party Planning",
     "image": "https://i.ibb.co/QQDT9W9/Retirement-Party.webp",
     "price": "$600 - $1,200",
-    "short-description": "Farewell celebrations for retirees, creating memorable moments.",
-    "full-description": "Bid farewell to your career with a retirement party that creates lasting memories. Our retirement party planning service is dedicated to celebrating your accomplishments and marking the transition to a new chapter in your life. Choose from our three packages to create a retirement party that suits your style and budget. Whether it's an elegant soirée or a casual get-together, we'll ensure it's a memorable event. Contact us now to plan a retirement party that honors your journey.",
+    "shortDescription": "Farewell celebrations for retirees, creating memorable moments.",
+    "fullDescription": "Bid farewell to your career with a retirement party that creates lasting memories. Our retirement party planning service is dedicated to celebrating your accomplishments and marking the transition to a new chapter in your life. Choose from our three packages to create a retirement party that suits your style and budget. Whether it's an elegant soirée or a casual get-together, we'll ensure it's a memorable event. Contact us now to plan a retirement party that honors your journey.",
     "pricing": {
       "basic": "$600",
       "standard": "$900",
@@ -65,11 +70,12 @@
     "address": "202 Cedar Road, Villagetown, USA"
   },
   {
+    "id": "6",
     "name": "Baby Shower Organization",
     "image": "https://i.ibb.co/8sT0JNz/Baby-Shower.jpg",
     "price": "$400 - $800",
-    "short-description": "Joyful baby shower planning for expectant parents and their loved ones.",
-    "full-description": "Celebrate the upcoming arrival of a new bundle of joy with a joyful baby shower. Our baby shower organization service is all about creating a heartwarming and memorable event for expectant parents and their loved ones. Choose from our three packages to plan a baby shower that suits your style and budget. We handle all the details, from decor to games and treats, so you can focus on celebrating this special moment. Contact us today to plan a baby shower filled with love and happiness.",
+    "shortDescription": "Joyful baby shower planning for expectant parents and their loved ones.",
+    "fullDescription": "Celebrate the upcoming arrival of a new bundle of joy with a joyful baby shower. Our baby shower organization service is all about creating a heartwarming and memorable event for expectant parents and their loved ones. Choose from our three packages to plan a baby shower that suits your style and budget. We handle all the details, from decor to games and treats, so you can focus on celebrating this special moment. Contact us today to plan a baby shower filled with love and happiness.",
     "pricing": {
       "basic": "$400",
       "standard": "$600",

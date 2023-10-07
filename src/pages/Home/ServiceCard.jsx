@@ -1,24 +1,19 @@
 import { FaAnglesRight } from "react-icons/fa6";
+import PropTypes from "prop-types";
 
-const ServiceCard = () => {
+const ServiceCard = ({ service }) => {
+  const { image, name, shortDescription, price } = service || {};
   return (
     <div className="bg-white rounded-lg shadow-md">
       <figure className="p-3">
-        <img
-          src="https://i.ibb.co/b2SsHPp/Anniversary-Celebration.jpg"
-          alt="Service Image"
-          className="w-full rounded-lg"
-        />
+        <img src={image} alt="Service Image" className="w-full rounded-lg" />
       </figure>
       <div className="px-6 pt-6 pb-10">
-        <div className="font-bold text-xl mb-4">Service Name</div>
+        <div className="font-bold text-xl mb-4">{name}</div>
 
-        <p className="text-gray-700 text-base">
-          Short description of the service goes here. This is a brief overview
-          of what the service offers.
-        </p>
-        <p className="text-gray-900 text-xl mt-5">
-          <span className="font-bold">Price:</span> $99.99
+        <p className="text-gray-500 text-base">{shortDescription}</p>
+        <p className="text-gray-500 text-xl mt-5">
+          <span className="font-semibold  text-black">Price:</span> {price}
         </p>
         <button className=" text-blue-600 border  hover:bg-black hover:text-white font-bold px-4 py-1 mt-8 rounded-full">
           <span className="flex items-center">
@@ -29,6 +24,10 @@ const ServiceCard = () => {
       </div>
     </div>
   );
+};
+
+ServiceCard.propTypes = {
+  service: PropTypes.object,
 };
 
 export default ServiceCard;

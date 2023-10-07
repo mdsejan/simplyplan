@@ -17,6 +17,7 @@ export const ThemeContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [services, setServices] = useState([]);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -50,6 +51,12 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  useEffect(() => {
+    fetch("/services.json")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
+
   const themeInfo = {
     googleSignIn,
     createUser,
@@ -58,6 +65,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     loading,
     setLoading,
+    services,
   };
 
   return (
