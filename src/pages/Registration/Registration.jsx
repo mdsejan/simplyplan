@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
@@ -14,7 +14,6 @@ const Registration = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    const fullName = e.target.fullName.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
 
@@ -53,8 +52,6 @@ const Registration = () => {
         });
 
         e.target.reset();
-
-        console.log(fullName);
       })
       .catch((error) => {
         setLoading(false);
@@ -168,28 +165,28 @@ const Registration = () => {
             {registerError}
           </p>
         )}
-        {!registerError && (
-          <>
-            <div>
-              <p className="mt-8 text-md">
-                Alredy have an Account?
-                <Link to="/login" className="text-blue-600 font-bold ml-2">
-                  Login
-                </Link>
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="divider my-10">OR</div>
-              <button
-                onClick={handleGoogleLogin}
-                className="btn btn-outline w-full mb-4 capitalize font-bold text-blue-600"
-              >
-                <FaGoogle></FaGoogle>
-                <span>Continue With Google</span>
-              </button>
-            </div>
-          </>
-        )}
+        <div>
+          <p className="mt-8 text-md">
+            Alredy have an Account?
+            <Link to="/login" className="text-blue-600 font-bold ml-2">
+              Login
+            </Link>
+          </p>
+        </div>
+        <div className="text-center">
+          <div className="divider my-10">OR</div>
+          <button
+            onClick={handleGoogleLogin}
+            className="btn btn-outline w-full mb-4 capitalize font-bold text-blue-600"
+          >
+            <img
+              className="w-4"
+              src="https://i.ibb.co/HpLpWjn/google.png"
+              alt="google"
+            />
+            <span>Continue With Google</span>
+          </button>
+        </div>
       </div>
       <div>
         <ToastContainer />

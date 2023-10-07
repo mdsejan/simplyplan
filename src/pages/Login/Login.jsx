@@ -1,13 +1,16 @@
 import { useContext, useState } from "react";
-import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import { ThemeContext } from "../../provider/AuthProvider";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  const { googleSignIn, signInUser } = useContext(ThemeContext);
+  const { googleSignIn, signInUser, loading, setLoading } =
+    useContext(ThemeContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -15,22 +18,65 @@ const Login = () => {
     const password = e.target.password.value;
 
     signInUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        setLoading(false);
+        toast.success("Sign-in Successful! Welcome back!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+
+        e.target.reset();
         navigate("/");
       })
       .catch((error) => {
-        console.log(error.message);
+        setLoading(false);
+        toast.error(error.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       });
   };
 
   const handleGoogleLogin = () => {
     googleSignIn()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        setLoading(false);
+        toast.success("Sign-in Successful! Welcome back!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        navigate("/");
       })
       .catch((error) => {
-        console.log(error.message);
+        setLoading(false);
+        toast.error(error.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       });
   };
 
@@ -89,9 +135,14 @@ const Login = () => {
           <div className="mb-4">
             <button
               type="submit"
-              className="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+              className="flex items-center justify-center w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none"
             >
               Login
+              {loading ? (
+                <span className="loading loading-spinner loading-sm ml-3"></span>
+              ) : (
+                ""
+              )}
             </button>
           </div>
         </form>
@@ -109,10 +160,17 @@ const Login = () => {
             onClick={handleGoogleLogin}
             className="btn btn-outline w-full mb-4 capitalize font-bold text-blue-600"
           >
-            <FaGoogle></FaGoogle>
+            <img
+              className="w-4"
+              src="https://i.ibb.co/HpLpWjn/google.png"
+              alt="google"
+            />
             <span>Login With Google</span>
           </button>
         </div>
+      </div>
+      <div>
+        <ToastContainer />
       </div>
     </div>
   );
