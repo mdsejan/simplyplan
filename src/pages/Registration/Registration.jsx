@@ -100,7 +100,7 @@ const Registration = () => {
           <div className="mb-4">
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-300"
             >
               Register
             </button>
@@ -109,7 +109,7 @@ const Registration = () => {
         <div>
           <p className="mt-8 text-md">
             Alredy have an Account?
-            <Link to="/login" className="text-red-950 font-bold ml-2">
+            <Link to="/login" className="text-blue-600 font-bold ml-2">
               Login
             </Link>
           </p>
@@ -118,7 +118,7 @@ const Registration = () => {
           <div className="divider my-10">OR</div>
           <button
             onClick={handleGoogleLogin}
-            className="btn btn-outline w-full mb-4 capitalize text-blue-600"
+            className="btn btn-outline w-full mb-4 capitalize font-bold text-blue-600"
           >
             <FaGoogle></FaGoogle>
             <span>Continue With Google</span>

@@ -43,7 +43,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" className="normal-case text-xl font-bold">
-            EventGo
+            SimplyPlan
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -52,7 +52,7 @@ const Navbar = () => {
         <div className="navbar-end">
           <Link
             to="/login"
-            className=" py-2 px-8 bg-gray-100 hover:bg-gray-200 font-semibold capitalize"
+            className=" py-2 px-8 bg-gray-200 hover:bg-black hover:text-white rounded font-semibold capitalize"
           >
             Login
           </Link>

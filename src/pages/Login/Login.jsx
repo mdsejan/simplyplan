@@ -89,7 +89,7 @@ const Login = () => {
           <div className="mb-4">
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
             >
               Login
             </button>
@@ -98,7 +98,7 @@ const Login = () => {
         <div>
           <p className="mt-8 text-md">
             New to this website? Please &nbsp;
-            <Link to="/register" className="text-red-950 font-bold">
+            <Link to="/register" className="text-blue-600 font-bold">
               Register
             </Link>
           </p>
@@ -107,7 +107,7 @@ const Login = () => {
           <div className="divider my-10">OR</div>
           <button
             onClick={handleGoogleLogin}
-            className="btn btn-outline w-full mb-4 capitalize text-blue-600"
+            className="btn btn-outline w-full mb-4 capitalize font-bold text-blue-600"
           >
             <FaGoogle></FaGoogle>
             <span>Login With Google</span>

@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a {
+  font-weight: 600;
+}
+.menu li a:hover {
+  background-color: #fff !important;
+  text-decoration: underline;
+}
+
+a.active {
+  background-color: #fff !important;
+  color: #2563eb !important;
+  font-weight: 700;
+}
