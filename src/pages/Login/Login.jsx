@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ThemeContext } from "../../provider/AuthProvider";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
@@ -11,6 +11,8 @@ const Login = () => {
 
   const { googleSignIn, signInUser, loading, setLoading } =
     useContext(ThemeContext);
+
+  const location = useLocation();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -32,7 +34,7 @@ const Login = () => {
         });
 
         e.target.reset();
-        navigate("/");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         setLoading(false);
@@ -63,7 +65,7 @@ const Login = () => {
           progress: undefined,
           theme: "light",
         });
-        navigate("/");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         setLoading(false);

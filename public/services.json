@@ -39,7 +39,7 @@
       }
     ],
     "address": "123 Main Street, Anytown, USA",
-    "participateLimit": "100"
+    "participateLimit": "500 -800"
   },
   {
     "id": "2",
