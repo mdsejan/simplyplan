@@ -14,7 +14,7 @@ const ServiceCard = ({ service }) => {
 
   return (
     <div
-      className="bg-white rounded-lg shadow-md"
+      className="bg-white rounded-lg shadow-sm border"
       data-aos="fade-up"
       data-aos-delay="200"
       data-aos-duration="1000"
