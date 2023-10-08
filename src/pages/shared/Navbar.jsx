@@ -90,7 +90,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className=" py-2 px-8 bg-gray-200 hover:bg-black hover:text-white rounded font-semibold capitalize"
+              className="nbtn py-2 px-8 bg-gray-200 hover:bg-black hover:text-white rounded font-semibold capitalize"
             >
               Login
             </Link>

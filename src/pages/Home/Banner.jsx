@@ -21,7 +21,7 @@ const Banner = () => {
           data-aos-delay="500"
           data-aos-duration="1500"
         >
-          <div className="xl:max-w-7xl">
+          <div className="xl:max-w-7xl bannercontent">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10">
               Discover the Art of Celebration with Our Comprehensive Event
               Planning

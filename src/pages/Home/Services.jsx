@@ -15,7 +15,7 @@ const Services = () => {
     <div>
       <div className="text-center pb-20">
         <h2
-          className="text-5xl font-bold"
+          className="text-4xl md:text-5xl font-bold"
           data-aos="zoom-in"
           data-aos-duration="900"
         >
