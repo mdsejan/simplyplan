@@ -6,12 +6,40 @@
     "price": "$2,500 - $5,000",
     "shortDescription": "Elegant wedding planning service to make your special day unforgettable.",
     "fullDescription": "Our wedding planning service is designed to make your special day truly unforgettable. We offer a range of packages to suit your needs, from basic to premium. Our dedicated team of professionals will work closely with you to ensure every detail is perfect. From venue selection and decor to catering and entertainment, we handle it all to create a seamless and magical wedding experience. Let us take the stress out of wedding planning so you can focus on cherishing each moment with your loved ones. Contact us today to start planning your dream wedding.",
-    "pricing": {
-      "basic": "$2,500",
-      "standard": "$3,500",
-      "premium": "$5,000"
-    },
-    "address": "123 Main Street, Anytown, USA"
+    "pricing": [
+      {
+        "name": "Basic Package",
+        "price": "$2,500",
+        "description": [
+          "Venue selection assistance",
+          "Basic decor setup",
+          "Catering coordination"
+        ]
+      },
+      {
+        "name": "Standard Package",
+        "price": "$3,500",
+        "description": [
+          "Venue selection assistance",
+          "Enhanced decor setup",
+          "Catering coordination",
+          "Entertainment arrangement"
+        ]
+      },
+      {
+        "name": "Premium Package",
+        "price": "$5,000",
+        "description": [
+          "Venue selection assistance",
+          "Luxurious decor setup",
+          "Catering coordination",
+          "Entertainment arrangement",
+          "Customized wedding favors"
+        ]
+      }
+    ],
+    "address": "123 Main Street, Anytown, USA",
+    "participateLimit": "100"
   },
   {
     "id": "2",

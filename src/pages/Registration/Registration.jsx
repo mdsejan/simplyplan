@@ -2,8 +2,7 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../provider/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -187,9 +186,6 @@ const Registration = () => {
             <span>Continue With Google</span>
           </button>
         </div>
-      </div>
-      <div>
-        <ToastContainer />
       </div>
     </div>
   );

@@ -1,13 +1,23 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { ThemeContext } from "../../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = useContext(ThemeContext);
 
   const handleLogOut = () => {
     logOut().then(() => {
-      console.log("Sign-out successful");
+      toast.success("Log-out successful", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     });
   };
 
@@ -67,9 +77,11 @@ const Navbar = () => {
           {user ? (
             <div className="flex items-center">
               <div>
-                <h3 className="mr-2 font-medium"> {user.displayName} </h3>
+                <h3 className="mr-2 font-medium hidden md:inline-block">
+                  {user.displayName}
+                </h3>
               </div>
-              <div className="avatar mr-3">
+              <div className="avatar mr-3  hidden md:inline-block">
                 <div className="w-10 rounded-full">
                   <img
                     src={
@@ -82,7 +94,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleLogOut}
-                className=" py-2 px-8 bg-gray-200 hover:bg-black hover:text-white rounded font-semibold capitalize"
+                className="nbtn py-2 px-8 bg-gray-200 hover:bg-black hover:text-white rounded font-semibold capitalize"
               >
                 LogOut
               </button>

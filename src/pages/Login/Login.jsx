@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import { ThemeContext } from "../../provider/AuthProvider";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -168,9 +168,6 @@ const Login = () => {
             <span>Login With Google</span>
           </button>
         </div>
-      </div>
-      <div>
-        <ToastContainer />
       </div>
     </div>
   );
