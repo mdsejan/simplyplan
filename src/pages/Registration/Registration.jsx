@@ -1,18 +1,24 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ThemeContext } from "../../provider/AuthProvider";
 import { toast } from "react-toastify";
+import { updateProfile } from "firebase/auth";
+import auth from "../../firebase/Firebase.config";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [registerError, setRegisterError] = useState("");
 
-  const { googleSignIn, createUser, loading, setLoading } =
+  const navigate = useNavigate();
+
+  const { googleSignIn, createUser, loading, setLoading, logOut } =
     useContext(ThemeContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
+    const fullName = e.target.fullName.value;
+    const imgLink = e.target.imgLink.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
 
@@ -38,8 +44,16 @@ const Registration = () => {
 
     createUser(email, password)
       .then(() => {
+        updateProfile(auth.currentUser, {
+          displayName: fullName,
+          photoURL: imgLink,
+        });
+
+        logOut().then();
+
         setLoading(false);
-        toast.success("Success! Your registration is complete", {
+
+        toast.success("Success! Your registration is complete. Please Login.", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -51,6 +65,8 @@ const Registration = () => {
         });
 
         e.target.reset();
+
+        navigate("/login");
       })
       .catch((error) => {
         setLoading(false);
@@ -97,6 +113,21 @@ const Registration = () => {
               type="text"
               id="fullName"
               name="fullName"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="imgLink"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Image Link
+            </label>
+            <input
+              type="text"
+              id="imgLink"
+              name="imgLink"
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
               required
             />

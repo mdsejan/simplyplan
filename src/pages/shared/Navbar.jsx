@@ -1,24 +1,12 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { ThemeContext } from "../../provider/AuthProvider";
-import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = useContext(ThemeContext);
 
   const handleLogOut = () => {
-    logOut().then(() => {
-      toast.success("Log-out successful", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    });
+    logOut().then();
   };
 
   const navLinks = (

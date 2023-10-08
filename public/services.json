@@ -53,7 +53,8 @@
       "standard": "$750",
       "premium": "$1,000"
     },
-    "address": "456 Elm Avenue, Cityville, USA"
+    "address": "456 Elm Avenue, Cityville, USA",
+    "participateLimit": "50 -100"
   },
   {
     "id": "3",
@@ -67,7 +68,8 @@
       "standard": "$1,800",
       "premium": "$2,500"
     },
-    "address": "789 Oak Lane, Suburbia, USA"
+    "address": "789 Oak Lane, Suburbia, USA",
+    "participateLimit": "100 -300"
   },
   {
     "id": "4",
@@ -81,7 +83,8 @@
       "standard": "$1,100",
       "premium": "$1,500"
     },
-    "address": "101 Pine Street, Townsville, USA"
+    "address": "101 Pine Street, Townsville, USA",
+    "participateLimit": "80 -250"
   },
   {
     "id": "5",
@@ -95,7 +98,8 @@
       "standard": "$900",
       "premium": "$1,200"
     },
-    "address": "202 Cedar Road, Villagetown, USA"
+    "address": "202 Cedar Road, Villagetown, USA",
+    "participateLimit": "50 -130"
   },
   {
     "id": "6",
@@ -109,6 +113,7 @@
       "standard": "$600",
       "premium": "$800"
     },
-    "address": "303 Maple Court, Riverside, USA"
+    "address": "303 Maple Court, Riverside, USA",
+    "participateLimit": "40 -90"
   }
 ]
