@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import Banner from "./Banner";
 import Services from "./Services";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div>
       <Banner></Banner>

@@ -1,11 +1,24 @@
 import { FaAnglesRight } from "react-icons/fa6";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const ServiceCard = ({ service }) => {
   const { id, image, name, shortDescription, price } = service || {};
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
-    <div className="bg-white rounded-lg shadow-md">
+    <div
+      className="bg-white rounded-lg shadow-md"
+      data-aos="fade-up"
+      data-aos-delay="200"
+      data-aos-duration="1000"
+    >
       <figure className="p-3">
         <img src={image} alt="Service Image" className="w-full rounded-lg" />
       </figure>

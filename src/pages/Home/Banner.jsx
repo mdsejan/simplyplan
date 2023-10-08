@@ -1,4 +1,11 @@
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const Banner = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div className="xl:px-5 xl:py-10">
       <div
@@ -8,7 +15,12 @@ const Banner = () => {
         }}
       >
         <div className="hero-overlay bg-opacity-90 xl:rounded-lg"></div>
-        <div className="hero-content text-center text-white">
+        <div
+          className="hero-content text-center text-white"
+          data-aos="zoom-in"
+          data-aos-delay="500"
+          data-aos-duration="1500"
+        >
           <div className="xl:max-w-7xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10">
               Discover the Art of Celebration with Our Comprehensive Event
