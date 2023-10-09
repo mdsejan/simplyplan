@@ -21,7 +21,7 @@ const MainLayouts = () => {
       return;
     }
     if (location.state) {
-      document.title = `SimplyPlan _ ${location.state}`;
+      document.title = `${location.state}`;
     }
   }, [location.pathname, location.state]);
 

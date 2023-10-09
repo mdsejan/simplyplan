@@ -18,6 +18,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [services, setServices] = useState([]);
+  const [blogs, setBlogs] = useState([]);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -57,6 +58,12 @@ const AuthProvider = ({ children }) => {
       .then((data) => setServices(data));
   }, []);
 
+  useEffect(() => {
+    fetch("/blogs.json")
+      .then((res) => res.json())
+      .then((data) => setBlogs(data));
+  }, []);
+
   const themeInfo = {
     googleSignIn,
     createUser,
@@ -66,6 +73,7 @@ const AuthProvider = ({ children }) => {
     loading,
     setLoading,
     services,
+    blogs,
   };
 
   return (
