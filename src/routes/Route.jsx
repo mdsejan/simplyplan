@@ -7,6 +7,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import PrivateRoute from "./PrivateRoute";
 import Gallery from "../pages/Gallery/Gallery";
+import Blogs from "../pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             <Gallery></Gallery>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/blog",
+        element: <Blogs></Blogs>,
       },
 
       {

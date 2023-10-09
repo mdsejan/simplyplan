@@ -18,7 +18,7 @@ const ServiceRightCard = ({ service }) => {
   };
   return (
     <>
-      <div className="shadow p-6 rounded-sm">
+      <div className="shadow-sm border p-6 rounded-sm">
         <h1 className="text-xl font-semibold text-center mb-5">
           Service Details
         </h1>

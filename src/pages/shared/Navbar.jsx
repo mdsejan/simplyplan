@@ -22,6 +22,11 @@ const Navbar = () => {
           Gallery
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/blog" className="mr-2">
+          blog
+        </NavLink>
+      </li>
 
       {!user ? (
         <li>

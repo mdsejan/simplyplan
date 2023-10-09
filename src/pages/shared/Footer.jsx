@@ -10,6 +10,9 @@ const Footer = () => {
         <Link to="/gallery" className="link link-hover">
           Gallery
         </Link>
+        <Link to="/blog" className="link link-hover">
+          blog
+        </Link>
         <Link to="/register" className="link link-hover">
           Register
         </Link>

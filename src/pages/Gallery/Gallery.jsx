@@ -1,9 +1,13 @@
 const Gallery = () => {
   return (
     <div>
-      <div className="min-h-[20vh] bg-gray-200 flex flex-col justify-center items-center text-center py-8 px-5">
-        <h1 className="text-5xl font-semibold">Gallery</h1>
-        <p className="mt-3 text-gray-500">Our Recent Works</p>
+      <div className="mx-auto max-w-screen-sm text-center mb-8 mt-16">
+        <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 ">
+          Gallery
+        </h2>
+        <p className="font-light text-gray-500 sm:text-xl">
+          Moments to Remember: Event Snapshot
+        </p>
       </div>
       <div className="max-w-screen-2xl mx-auto py-20 px-5 grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="grid gap-4">
