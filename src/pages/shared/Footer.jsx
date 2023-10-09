@@ -7,6 +7,9 @@ const Footer = () => {
         <Link to="/" className="link link-hover">
           Home
         </Link>
+        <Link to="/gallery" className="link link-hover">
+          Gallery
+        </Link>
         <Link to="/register" className="link link-hover">
           Register
         </Link>

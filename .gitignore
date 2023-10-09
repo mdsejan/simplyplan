@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .env
+questions_and_answers.md
 
 
 # Editor directories and files

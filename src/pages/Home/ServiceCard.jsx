@@ -29,7 +29,7 @@ const ServiceCard = ({ service }) => {
         <p className="text-gray-500 text-xl mt-5">
           <span className="font-semibold  text-black">Price:</span> {price}
         </p>
-        <Link to={`/service/${id}`}>
+        <Link to={`/service/${id}`} state={name}>
           <button className=" text-blue-600 border  hover:bg-black hover:text-white font-bold px-4 py-1 mt-8 rounded-full">
             <span className="flex items-center">
               See Details

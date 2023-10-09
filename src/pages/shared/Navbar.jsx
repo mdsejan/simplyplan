@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { ThemeContext } from "../../provider/AuthProvider";
+import { FaHubspot } from "react-icons/fa6";
 
 const Navbar = () => {
   const { user, logOut } = useContext(ThemeContext);
@@ -14,6 +15,11 @@ const Navbar = () => {
       <li>
         <NavLink to="/" className="mr-2">
           Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/gallery" className="mr-2">
+          Gallery
         </NavLink>
       </li>
 
@@ -55,7 +61,9 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" className="normal-case text-xl font-bold">
-            SimplyPlan
+            <h3 className="flex items-center">
+              <FaHubspot></FaHubspot> SimplyPlan
+            </h3>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
