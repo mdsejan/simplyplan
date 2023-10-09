@@ -14,21 +14,21 @@ const Gallery = () => {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://i.pinimg.com/564x/fb/95/f7/fb95f777b30bf7e21647a6678808332e.jpg"
+              src="https://i.ibb.co/nwwfSSg/eventimg1.jpg"
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://i.pinimg.com/564x/60/6f/2c/606f2c99b2914f7b9dfe0c36d334f317.jpg"
+              src="https://i.ibb.co/rxnx7zt/eventimg2.jpg"
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://i.pinimg.com/564x/21/23/e8/2123e881ad3d055838d711f33764f96a.jpg"
+              src="https://i.ibb.co/zVsNGh2/eventimg3.jpg"
               alt=""
             />
           </div>
@@ -39,21 +39,21 @@ const Gallery = () => {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://i.pinimg.com/564x/b3/f2/6d/b3f26dba3b0a7ee462b7891c21dae20b.jpg"
+              src="https://i.ibb.co/kyzVgtL/eventimg4.jpg"
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://i.pinimg.com/564x/b1/a1/d7/b1a1d7b98aa42bf1075a21c747ff636a.jpg"
+              src="https://i.ibb.co/NFNpdhf/eventimg5.jpg"
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://i.pinimg.com/564x/10/ce/9a/10ce9a2c98092c415db7a7ae907f6ecf.jpg"
+              src="https://i.ibb.co/0fRCczy/eventimg6.jpg"
               alt=""
             />
           </div>
@@ -64,21 +64,21 @@ const Gallery = () => {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://yorkmillsgallery.com/wp-content/uploads/2020/03/23155195_763943597123771_1896105128494109996_o.jpg"
+              src="https://i.ibb.co/k5pNtsm/eventimg7.jpg"
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://i.pinimg.com/564x/13/70/6e/13706e0fa859a88630d4e4eed8c851a6.jpg"
+              src="https://i.ibb.co/sVcRhKw/eventimg8.jpg"
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://i.pinimg.com/564x/8a/8e/35/8a8e3554ff0e36ef08c84a34ba7bbf4b.jpg"
+              src="https://i.ibb.co/3d5v0pM/eventimg9.jpg"
               alt=""
             />
           </div>
@@ -89,21 +89,21 @@ const Gallery = () => {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://i.pinimg.com/564x/b4/1a/34/b41a3420cbe6104e74d4b0769ed683d6.jpg"
+              src="https://i.ibb.co/qNxyhTz/eventimg10.jpg"
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://i.pinimg.com/564x/05/1d/7a/051d7a8089a030ede45318775e70a8fa.jpg"
+              src="https://i.ibb.co/w6MPzTM/eventimg11.jpg"
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://i.pinimg.com/564x/4b/2d/b1/4b2db191ba4607b3e17853ec2c75c4cf.jpg"
+              src="https://i.ibb.co/9TCvjCw/eventimg12.jpg"
               alt=""
             />
           </div>
